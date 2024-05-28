@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+body{
+    background-color: #202124;
+}
+
+/* Header */
+header{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 2rem;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#search-input{
+    background-color: #525356;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    color: #ddd;
+    width: 400px;
+}
+
+#search-input::placeholder{
+    color: #ddd;
+}
+
+#export-csv{
+    background-color: #333;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4 s;
+}
+
+#export-csv:hover{
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+}
+
+/*Form de nova nota */
+#add-note-container{
+    display: flex;
+    width: 400px;
+    margin: 1rem auto 0;
+    gap: 1rem;
+}
+
+#add-note-container input,
+#add-note-container button{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#add-note-container input{
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+#add-note-container button{
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #202124;
+    border: 1px solid #fff;
+}
+
+/* Blocos do DevNotes*/
+#notes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.note{
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #333;
+    background-color: #202124;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+}
+
+.note textarea{
+    color: #fff;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+textarea{
+    color: #fff;
+}
+
+.note .bi-pin{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.note:hover > i{
+    opacity: 1;
+}
+
+.note .bi-x-lg,
+.note .bi-file-earmark-plus{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: .9rem;
+    padding: 5px;
+    color: #555;
+    cursor: pointer;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.note .bi-file-earmark-plus{
+    top: 40px;
+}
+
+.note .bi-x-lg:hover,
+.note .bi-file-earmark-plus:hover{
+    color: #fff;
+}
+
+.note.fixed{
+    background-color: #3c3c3c;
+}
+
+/* Responsividade */
+
+/* SmartPhones */
+@media(max-width:576px) {
+    header{
+        justify-content: space-between;
+        padding: 1.2rem;
+    }
+
+    header #search-input{
+        width: 100%;
+    }
+    #export-csv{
+        width: 100px;
+       
+    }
+
+    .notes{
+        width: 10px;
+    }
+}
+
+/*Tables*/
+@media(max-width:800px) {
+    header{
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    #search-input{
+        width: 300px;
+    }
+    #notes-container{
+        justify-content: space-around;
+    }
+}
